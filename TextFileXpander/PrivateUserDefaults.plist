@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>SAVE_PREFS_NAME_MAIN</key>
+	<string>MAIN</string>
+	<key>SAVE_KEYS_MAIN</key>
+	<array>
+		<string>VIEWTYPE</string>
+		<string>NOTIFICATION</string>
+		<string>CURRENTSTORAGE</string>
+	</array>
+	<key>SAVE_PREFS_NAME_STORAGE</key>
+	<string>STORAGE</string>
+	<key>SAVE_KEYS_STORAGE</key>
+	<array>
+		<string>CURRENTPATH</string>
+	</array>
+	<key>SAVE_KEYS_DROPBOX</key>
+	<array>
+		<string>DROPBOXKEY</string>
+		<string>DROPBOXSECRET</string>
+	</array>
+</dict>
+</plist>

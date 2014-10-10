@@ -1,0 +1,48 @@
+-------------------- to Clipboard
+How are you doing?
+I'd better get going, see you!
+
+-------------------- to Dictionary
+dict: belly
+dict: tummies
+dict: abdomen
+
+-------------------- to Google Search
+flight: AA175
+flight: BC307
+
+-------------------- to Email Client
+mailto: aaa@bbb.ccc
+mailto: ddd@eee.fff,ggg@hhh.iii
+
+-------------------- to Google Maps
+map: kagoshima, japan
+route: from: tokyo, japan to: nagoya, japan
+
+-------------------- to Foursquare
+near: Clearwater, Florida
+near: kirishima kagoshima, Japan
+
+-------------------- to Contacts (N/A)
+people: Grandma
+people: Grand Grandpa
+
+-------------------- to Phone
+tel: 000-999
+tel: 999-000
+
+-------------------- to Twitter
+twitter: Morning!
+twitter: Night!
+
+-------------------- to Browser
+url: http://wanswings.wxoxw.jp/
+url: https://github.com/wanswings/
+
+-------------------- to weather.com
+weather: Chicago, IL
+weather: Kagoshima, Japan
+
+-------------------- to YouTube
+youtube: Kristin Chenoweth
+youtube: Idina Menzel

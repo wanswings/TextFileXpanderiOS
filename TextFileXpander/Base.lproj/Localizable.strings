@@ -1,0 +1,27 @@
+/* 
+  Localizable.strings
+  TextFileXpander
+
+  Created by wanswings on 2014/09/03.
+  Copyright (c) 2014 wanswings. All rights reserved.
+*/
+
+"app_name" = "TextFileXpander";
+"app_summary" = "Text File eXpander for iOS.";
+"title_activity_main" = "TextFileXpander";
+"title_activity_sub" = "TextFileXpander";
+"title_action_menu" = "Action Menu";
+"action_load_data" = "Load Data";
+"action_refresh" = "Refresh";
+"action_view_type" = "View Type";
+"action_reset" = "Reset";
+"dialog_title_select_action" = "Choose Action";
+"dialog_title_select_storage" = "Choose Storage";
+"dialog_title_select_dir" = "Choose Folder";
+"dialog_title_select_view_type" = "Choose View Type";
+"dialog_title_reset" = "Reset";
+"dialog_message_reset" = "Do you want to initialize data?";
+"toast_copied_clipboard" = "Text has been copied to Pasteboard.";
+"toast_finished_reset" = "The initialization is finished.";
+"error_internet_not_available" = "Internet not available";
+"error_dropbox" = "Connection failed. Try again later!";
