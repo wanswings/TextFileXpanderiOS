@@ -10,7 +10,7 @@ TextFileXpander is a simple application for iOS.
 Easy to paste your fixed phrase to the Pasteboard.  
 Launch your default application for text/plain when you long tap a file name.  
 Magic words provides for cooperation with an external application.  
-Share with your Mac, Windows, iOS and Android devices.  
+Share with your Mac, Windows, iOS and Android devices using Dropbox or Google Drive.  
 
 Requirement
 --------------------
@@ -39,7 +39,7 @@ How-To Use
 
 ![](https://raw.github.com/wanswings/TextFileXpanderiOS/master/screenshots/screenshot1.png)
 
-* You can choose Dropbox or Local.
+* You can choose Dropbox, Google Drive or Local.
 
 ![](https://raw.github.com/wanswings/TextFileXpanderiOS/master/screenshots/screenshot2.png)
 
@@ -84,6 +84,12 @@ Uninstall
 
 Release Notes
 --------------------
+Version 1.1
+
+- Integrate Google Drive.
+- Add some magic words.
+- Fix some issues.
+
 Version 1.0
 
 - First release.

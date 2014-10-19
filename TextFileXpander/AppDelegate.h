@@ -7,9 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "GTMOAuth2Authentication.h"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
+@property (nonatomic, retain) GTMOAuth2Authentication *gtmOAuth2;
 
 @end

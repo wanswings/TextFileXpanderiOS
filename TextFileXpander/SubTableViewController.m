@@ -31,6 +31,10 @@ static NSInteger const ATTR_DATA = 2;
     return self;
 }
 
+- (BOOL)prefersStatusBarHidden {
+    return NO;
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -166,6 +170,11 @@ static NSInteger const ATTR_DATA = 2;
         else if ([matchCmd isEqual:@"people"]) {
             // people
             str = matchStr;
+        }
+        else if ([matchCmd isEqual:@"recipe"]) {
+            // recipe
+            sendStr = [@"http://www.epicurious.com/tools/searchresults?search=" stringByAppendingString:
+                       [matchStr stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
         }
         else if ([matchCmd isEqual:@"route"]) {
             // route

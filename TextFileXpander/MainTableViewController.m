@@ -8,6 +8,7 @@
 
 #import "MainTableViewController.h"
 #import "AppDelegate.h"
+#import "GoogleAuthViewController.h"
 #import "PrivateUserDefaults.h"
 #import "SimpleToast.h"
 
@@ -16,8 +17,8 @@ static NSString *const EXTRA_PARAM_MAIN = @"paramMain";
 
 static NSString *const VIEW_TYPE_STD = @"Standard View";
 static NSString *const VIEW_TYPE_EXP = @"Expandable View";
-static NSString *const STORAGE_NAMES[] = {@"Dropbox", @"Local"};
-static NSString *const STORAGE_CLASSES[] = {@"Dropbox", @"DocumentsStorage"};
+static NSString *const STORAGE_NAMES[] = {@"Dropbox", @"Google Drive", @"Local"};
+static NSString *const STORAGE_CLASSES[] = {@"Dropbox", @"GoogleDrive", @"DocumentsStorage"};
 
 static NSInteger const ACTIONSHEET_TAG_ACTION = 1;
 static NSInteger const ACTIONSHEET_TAG_VIEWTYPE = 2;
@@ -41,6 +42,7 @@ static NSInteger const ACTIONSHEET_TAG_STORAGE = 4;
     SimpleToast *toast;
     ActionViewController *dialog;
     BOOL firstTime;
+    GoogleAuthViewController *controller;
 }
 @synthesize groupArray;
 @synthesize interactionController;
@@ -52,6 +54,10 @@ static NSInteger const ACTIONSHEET_TAG_STORAGE = 4;
         // Custom initialization
     }
     return self;
+}
+
+- (BOOL)prefersStatusBarHidden {
+    return NO;
 }
 
 - (void)viewDidLoad
@@ -220,16 +226,14 @@ static NSInteger const ACTIONSHEET_TAG_STORAGE = 4;
 {
     NSLog(@"%@readyToStartDropboxAuthActivity", classNameForLog);
     if (![[DBSession sharedSession] isLinked]) {
-        if (![[DBSession sharedSession] isLinked]) {
-            [[NSNotificationCenter defaultCenter]
-                         addObserver:self
-                         selector:@selector(finishDropboxAuthentication:)
-                         name:@"finishDropboxAuthentication"
-                         object:nil];
+        [[NSNotificationCenter defaultCenter]
+                     addObserver:self
+                     selector:@selector(finishDropboxAuthentication:)
+                     name:@"finishDropboxAuthentication"
+                     object:nil];
 
-            [[DBSession sharedSession] linkFromController:self];
-            return;
-        }
+        [[DBSession sharedSession] linkFromController:self];
+        return;
     }
 
     [self notRreadyToUseDropbox];
@@ -272,6 +276,60 @@ static NSInteger const ACTIONSHEET_TAG_STORAGE = 4;
 - (void)notRreadyToUseDropbox
 {
     NSLog(@"%@notRreadyToUseDropbox", classNameForLog);
+    [self closeStorage];
+    [self loadKeys];
+}
+
+- (void)readyToStartGoogleAuthActivity
+{
+    NSLog(@"%@readyToStartGoogleAuthActivity", classNameForLog);
+
+    controller = [[GoogleAuthViewController alloc] initWithParent:self];
+
+    [[NSNotificationCenter defaultCenter]
+                 addObserver:self
+                 selector:@selector(finishGoogleAuthentication:)
+                 name:@"finishGoogleAuthentication"
+                 object:nil];
+}
+
+- (void)finishGoogleAuthentication:(NSNotification *)notification
+{
+    NSLog(@"%@finishGoogleAuthentication", classNameForLog);
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+
+    BOOL isReady = [(NSNumber *)[notification object] boolValue];
+    if (isReady) {
+        [self readyToUseGoogle];
+    }
+    else {
+        [self notRreadyToUseGoogle];
+    }
+}
+
+- (void)readyToUseGoogle
+{
+    NSLog(@"%@readyToUseGoogle", classNameForLog);
+
+    if (storage != nil) {
+        NSString *mName = @"selectDir";
+
+        SEL method = NSSelectorFromString(mName);
+        if ([storage respondsToSelector:method]) {
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Warc-performSelector-leaks"
+            [storage performSelector:method];
+#pragma clang diagnostic pop
+        }
+        else {
+            NSLog(@"%@readyToUseGoogle...%@ error", classNameForLog, mName);
+        }
+    }
+}
+
+- (void)notRreadyToUseGoogle
+{
+    NSLog(@"%@notRreadyToUseGoogle", classNameForLog);
     [self closeStorage];
     [self loadKeys];
 }

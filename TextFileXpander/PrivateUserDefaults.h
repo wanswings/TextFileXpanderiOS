@@ -16,6 +16,7 @@
     NSString *SAVE_PREFS_NAME_STORAGE;
     NSArray *SAVE_KEYS_STORAGE;
     NSArray *SAVE_KEYS_DROPBOX;
+    NSArray *SAVE_KEYS_GOOGLE;
 }
 
 - (id)init:(NSString *)name;

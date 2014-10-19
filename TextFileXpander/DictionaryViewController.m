@@ -25,6 +25,10 @@ static CGFloat const angle90[4] = {0.0f, 180.0f, 90.0f, 270.0f};
     return self;
 }
 
+- (BOOL)prefersStatusBarHidden {
+    return NO;
+}
+
 - (void)changeNotification:(NSNotification *)aNotification
 {
     NSLog(@"%@changeNotification", classNameForLog);

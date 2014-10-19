@@ -12,7 +12,6 @@
 {
     @private
     UITableViewController *parentController;
-    BOOL isRefresh;
     UIActivityIndicatorView *indicator;
     NSString *SAVE_PREFS_NAME_STORAGE;
     NSString *currentPath;
@@ -77,6 +76,7 @@
 
 - (void)close
 {
+    NSLog(@"%@close", classNameForLog);
 }
 
 - (void)selectDir

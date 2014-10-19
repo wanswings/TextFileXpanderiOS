@@ -36,6 +36,14 @@
 		3BDF614E19B8321C00756F92 /* SubTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BDF614D19B8321C00756F92 /* SubTableViewController.m */; };
 		3BE381F319CAE929009CBED1 /* SimpleToast.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BE381F219CAE929009CBED1 /* SimpleToast.m */; };
 		3BE3FC3619D3162800FBCF3C /* DictionaryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BE3FC3519D3162800FBCF3C /* DictionaryViewController.m */; };
+		3BE41F0719EA0F9C00D0FF91 /* GTMHTTPFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BE41EFF19EA0F9C00D0FF91 /* GTMHTTPFetcher.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		3BE41F0819EA0F9C00D0FF91 /* GTMOAuth2Authentication.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BE41F0119EA0F9C00D0FF91 /* GTMOAuth2Authentication.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		3BE41F0919EA0F9C00D0FF91 /* GTMOAuth2SignIn.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BE41F0319EA0F9C00D0FF91 /* GTMOAuth2SignIn.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		3BE41F0A19EA0F9C00D0FF91 /* GTMOAuth2ViewControllerTouch.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BE41F0519EA0F9C00D0FF91 /* GTMOAuth2ViewControllerTouch.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		3BE41F0D19EA101E00D0FF91 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BE41F0C19EA101E00D0FF91 /* SystemConfiguration.framework */; };
+		3BE41F1019EA122C00D0FF91 /* GoogleAuthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BE41F0F19EA122C00D0FF91 /* GoogleAuthViewController.m */; };
+		3BE41F1219EA25D500D0FF91 /* GTMOAuth2ViewTouch.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3BE41F1119EA25D500D0FF91 /* GTMOAuth2ViewTouch.xib */; };
+		3BE41F1519EA2BAD00D0FF91 /* GoogleDrive.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BE41F1419EA2BAD00D0FF91 /* GoogleDrive.m */; };
 		3BE6353B19B88BA200979759 /* Storage.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BE6353A19B88BA200979759 /* Storage.m */; };
 		3BE6353E19B8A0B600979759 /* PrivateUserDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BE6353D19B8A0B600979759 /* PrivateUserDefaults.m */; };
 		3BEC9BDC19BD1FE900745E22 /* Dropbox.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BEC9BDB19BD1FE900745E22 /* Dropbox.m */; };
@@ -98,6 +106,20 @@
 		3BE381F219CAE929009CBED1 /* SimpleToast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SimpleToast.m; sourceTree = "<group>"; };
 		3BE3FC3419D3162800FBCF3C /* DictionaryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DictionaryViewController.h; sourceTree = "<group>"; };
 		3BE3FC3519D3162800FBCF3C /* DictionaryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DictionaryViewController.m; sourceTree = "<group>"; };
+		3BE41EFE19EA0F9C00D0FF91 /* GTMHTTPFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMHTTPFetcher.h; sourceTree = "<group>"; };
+		3BE41EFF19EA0F9C00D0FF91 /* GTMHTTPFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTMHTTPFetcher.m; sourceTree = "<group>"; };
+		3BE41F0019EA0F9C00D0FF91 /* GTMOAuth2Authentication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMOAuth2Authentication.h; sourceTree = "<group>"; };
+		3BE41F0119EA0F9C00D0FF91 /* GTMOAuth2Authentication.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTMOAuth2Authentication.m; sourceTree = "<group>"; };
+		3BE41F0219EA0F9C00D0FF91 /* GTMOAuth2SignIn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMOAuth2SignIn.h; sourceTree = "<group>"; };
+		3BE41F0319EA0F9C00D0FF91 /* GTMOAuth2SignIn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTMOAuth2SignIn.m; sourceTree = "<group>"; };
+		3BE41F0419EA0F9C00D0FF91 /* GTMOAuth2ViewControllerTouch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMOAuth2ViewControllerTouch.h; sourceTree = "<group>"; };
+		3BE41F0519EA0F9C00D0FF91 /* GTMOAuth2ViewControllerTouch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTMOAuth2ViewControllerTouch.m; sourceTree = "<group>"; };
+		3BE41F0C19EA101E00D0FF91 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		3BE41F0E19EA122C00D0FF91 /* GoogleAuthViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoogleAuthViewController.h; sourceTree = "<group>"; };
+		3BE41F0F19EA122C00D0FF91 /* GoogleAuthViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoogleAuthViewController.m; sourceTree = "<group>"; };
+		3BE41F1119EA25D500D0FF91 /* GTMOAuth2ViewTouch.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GTMOAuth2ViewTouch.xib; sourceTree = "<group>"; };
+		3BE41F1319EA2BAD00D0FF91 /* GoogleDrive.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoogleDrive.h; sourceTree = "<group>"; };
+		3BE41F1419EA2BAD00D0FF91 /* GoogleDrive.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoogleDrive.m; sourceTree = "<group>"; };
 		3BE6353919B88BA200979759 /* Storage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Storage.h; sourceTree = "<group>"; };
 		3BE6353A19B88BA200979759 /* Storage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Storage.m; sourceTree = "<group>"; };
 		3BE6353C19B8A0B600979759 /* PrivateUserDefaults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrivateUserDefaults.h; sourceTree = "<group>"; };
@@ -120,6 +142,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3BE41F0D19EA101E00D0FF91 /* SystemConfiguration.framework in Frameworks */,
 				3BF4855019B7653700F7CF78 /* QuartzCore.framework in Frameworks */,
 				3BF4854E19B7652400F7CF78 /* Security.framework in Frameworks */,
 				3BF4854C19B763CB00F7CF78 /* DropboxSDK.framework in Frameworks */,
@@ -179,6 +202,7 @@
 		3B8B238219B75EFE00B1FB5D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3BE41F0C19EA101E00D0FF91 /* SystemConfiguration.framework */,
 				3BF4854F19B7653700F7CF78 /* QuartzCore.framework */,
 				3BF4854D19B7652400F7CF78 /* Security.framework */,
 				3B8B238319B75EFE00B1FB5D /* Foundation.framework */,
@@ -203,11 +227,16 @@
 				3BFFB49219C5245B00AC05C7 /* DocumentsStorage.m */,
 				3BEC9BDA19BD1FE900745E22 /* Dropbox.h */,
 				3BEC9BDB19BD1FE900745E22 /* Dropbox.m */,
+				3BE41F0E19EA122C00D0FF91 /* GoogleAuthViewController.h */,
+				3BE41F0F19EA122C00D0FF91 /* GoogleAuthViewController.m */,
+				3BE41F1319EA2BAD00D0FF91 /* GoogleDrive.h */,
+				3BE41F1419EA2BAD00D0FF91 /* GoogleDrive.m */,
 				3B8B239E19B75EFF00B1FB5D /* Images.xcassets */,
 				3B8B239819B75EFF00B1FB5D /* Main_iPad.storyboard */,
 				3B8B239519B75EFF00B1FB5D /* Main_iPhone.storyboard */,
 				3BDF614919B8312A00756F92 /* MainTableViewController.h */,
 				3BDF614A19B8312A00756F92 /* MainTableViewController.m */,
+				3BE41EFD19EA0F8600D0FF91 /* OAuth2 */,
 				3BD46B7819CC0E170038E386 /* PickerViewController.h */,
 				3BD46B7919CC0E170038E386 /* PickerViewController.m */,
 				3BE6353C19B8A0B600979759 /* PrivateUserDefaults.h */,
@@ -229,6 +258,7 @@
 		3B8B238A19B75EFF00B1FB5D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				3BE41F1119EA25D500D0FF91 /* GTMOAuth2ViewTouch.xib */,
 				3B8B23BF19B7618000B1FB5D /* Localizable.strings */,
 				3B8B238B19B75EFF00B1FB5D /* TextFileXpander-Info.plist */,
 				3B8B238C19B75EFF00B1FB5D /* InfoPlist.strings */,
@@ -264,6 +294,21 @@
 				3BDEACB519CFAE2E00E51A26 /* sample.txt */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		3BE41EFD19EA0F8600D0FF91 /* OAuth2 */ = {
+			isa = PBXGroup;
+			children = (
+				3BE41EFE19EA0F9C00D0FF91 /* GTMHTTPFetcher.h */,
+				3BE41EFF19EA0F9C00D0FF91 /* GTMHTTPFetcher.m */,
+				3BE41F0019EA0F9C00D0FF91 /* GTMOAuth2Authentication.h */,
+				3BE41F0119EA0F9C00D0FF91 /* GTMOAuth2Authentication.m */,
+				3BE41F0219EA0F9C00D0FF91 /* GTMOAuth2SignIn.h */,
+				3BE41F0319EA0F9C00D0FF91 /* GTMOAuth2SignIn.m */,
+				3BE41F0419EA0F9C00D0FF91 /* GTMOAuth2ViewControllerTouch.h */,
+				3BE41F0519EA0F9C00D0FF91 /* GTMOAuth2ViewControllerTouch.m */,
+			);
+			name = OAuth2;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -345,6 +390,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3BE41F1219EA25D500D0FF91 /* GTMOAuth2ViewTouch.xib in Resources */,
 				3B8B23BD19B7618000B1FB5D /* Localizable.strings in Resources */,
 				3B46294519D0731100B4A209 /* TextFileXpander80.png in Resources */,
 				3B8B239A19B75EFF00B1FB5D /* Main_iPad.storyboard in Resources */,
@@ -386,11 +432,17 @@
 				3BE6353B19B88BA200979759 /* Storage.m in Sources */,
 				3BFFB49319C5245B00AC05C7 /* DocumentsStorage.m in Sources */,
 				3B8B239019B75EFF00B1FB5D /* main.m in Sources */,
+				3BE41F0719EA0F9C00D0FF91 /* GTMHTTPFetcher.m in Sources */,
 				3BEC9BDC19BD1FE900745E22 /* Dropbox.m in Sources */,
 				3BB7F65919C5DCEC0082FAE5 /* Reachability.m in Sources */,
 				3BD46B7A19CC0E170038E386 /* PickerViewController.m in Sources */,
+				3BE41F0819EA0F9C00D0FF91 /* GTMOAuth2Authentication.m in Sources */,
+				3BE41F1019EA122C00D0FF91 /* GoogleAuthViewController.m in Sources */,
 				3BF4C72619CC3BD0009D6872 /* ActionViewController.m in Sources */,
+				3BE41F1519EA2BAD00D0FF91 /* GoogleDrive.m in Sources */,
+				3BE41F0A19EA0F9C00D0FF91 /* GTMOAuth2ViewControllerTouch.m in Sources */,
 				3BDF614B19B8312A00756F92 /* MainTableViewController.m in Sources */,
+				3BE41F0919EA0F9C00D0FF91 /* GTMOAuth2SignIn.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -542,6 +594,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TextFileXpander/TextFileXpander-Prefix.pch";
 				INFOPLIST_FILE = "TextFileXpander/TextFileXpander-Info.plist";
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = TextFileXpander;
 				PROVISIONING_PROFILE = "40a84b64-456d-48ee-9a22-75fa897b6513";
 				WRAPPER_EXTENSION = app;
@@ -562,6 +615,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TextFileXpander/TextFileXpander-Prefix.pch";
 				INFOPLIST_FILE = "TextFileXpander/TextFileXpander-Info.plist";
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = TextFileXpander;
 				PROVISIONING_PROFILE = "40a84b64-456d-48ee-9a22-75fa897b6513";
 				WRAPPER_EXTENSION = app;

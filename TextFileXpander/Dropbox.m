@@ -33,13 +33,11 @@
         self.delegateDropbox = parent;
 
         if (![[DBSession sharedSession] isLinked]) {
-            if (![[DBSession sharedSession] isLinked]) {
-                if ([delegateDropbox respondsToSelector:@selector(readyToStartDropboxAuthActivity)]) {
-                    [delegateDropbox readyToStartDropboxAuthActivity];
-                }
-                else {
-                    NSLog(@"%@cannot delegate readyToStartDropboxAuthActivity", classNameForLog);
-                }
+            if ([delegateDropbox respondsToSelector:@selector(readyToStartDropboxAuthActivity)]) {
+                [delegateDropbox readyToStartDropboxAuthActivity];
+            }
+            else {
+                NSLog(@"%@cannot delegate readyToStartDropboxAuthActivity", classNameForLog);
             }
         }
         else {
@@ -101,8 +99,8 @@
         while (!asyncFinished) {
             [[NSRunLoop currentRunLoop] runMode:NSDefaultRunLoopMode
                                      beforeDate:[NSDate dateWithTimeIntervalSinceNow:0.5]];
-            // 30s
-            if([[NSDate date] timeIntervalSinceDate:sDate] >= 30) {
+            // 120s
+            if([[NSDate date] timeIntervalSinceDate:sDate] >= 120) {
                 NSLog(@"%@getEntriesAPI...timeout error", classNameForLog);
                 [asyncResultArray removeAllObjects];
                 asyncFinished = YES;
@@ -164,8 +162,8 @@
         while (!asyncFinished) {
             [[NSRunLoop currentRunLoop] runMode:NSDefaultRunLoopMode
                                      beforeDate:[NSDate dateWithTimeIntervalSinceNow:0.5]];
-            // 60s
-            if([[NSDate date] timeIntervalSinceDate:sDate] >= 60) {
+            // 120s
+            if([[NSDate date] timeIntervalSinceDate:sDate] >= 120) {
                 NSLog(@"%@getFileAPI...timeout error", classNameForLog);
                 asyncResultBool = NO;
                 asyncFinished = YES;

@@ -46,7 +46,6 @@
 
 - (void)closeToast
 {
-    NSLog(@"hidden toast");
     self.hidden = YES;
 }
 

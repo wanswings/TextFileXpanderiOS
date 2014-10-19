@@ -27,6 +27,10 @@ near: kirishima kagoshima, Japan
 people: Grandma
 people: Grand Grandpa
 
+-------------------- to Epicurious.com
+recipe: salmon
+recipe: beef
+
 -------------------- to Phone
 tel: 000-999
 tel: 999-000

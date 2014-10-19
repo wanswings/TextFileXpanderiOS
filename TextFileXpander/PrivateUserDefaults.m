@@ -27,6 +27,7 @@
         SAVE_PREFS_NAME_STORAGE = [dic objectForKey:@"SAVE_PREFS_NAME_STORAGE"];
         SAVE_KEYS_STORAGE = [dic objectForKey:@"SAVE_KEYS_STORAGE"];
         SAVE_KEYS_DROPBOX = [dic objectForKey:@"SAVE_KEYS_DROPBOX"];
+        SAVE_KEYS_GOOGLE = [dic objectForKey:@"SAVE_KEYS_GOOGLE"];
     }
     return self;
 }
@@ -42,6 +43,9 @@
         [prefs removeObjectForKey:key];
     }
     for (id key in SAVE_KEYS_DROPBOX) {
+        [prefs removeObjectForKey:key];
+    }
+    for (id key in SAVE_KEYS_GOOGLE) {
         [prefs removeObjectForKey:key];
     }
 }
@@ -88,6 +92,9 @@
             [prefs removeObjectForKey:key];
         }
         for (id key in SAVE_KEYS_DROPBOX) {
+            [prefs removeObjectForKey:key];
+        }
+        for (id key in SAVE_KEYS_GOOGLE) {
             [prefs removeObjectForKey:key];
         }
     }

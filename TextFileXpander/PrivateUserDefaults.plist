@@ -16,6 +16,10 @@
 	<array>
 		<string>CURRENTPATH</string>
 	</array>
+	<key>SAVE_KEYS_GOOGLE</key>
+	<array>
+		<string>CLIENTID</string>
+	</array>
 	<key>SAVE_KEYS_DROPBOX</key>
 	<array>
 		<string>DROPBOXKEY</string>

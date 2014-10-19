@@ -22,6 +22,7 @@
 {
     @protected
     UIView *parentView;
+    BOOL isRefresh;
     NSString *TEXT_FILE_EXTENSION;
     NSString *FILE_SEPARATOR;
     NSString *classNameForLog;
