@@ -25,5 +25,12 @@
 		<string>DROPBOXKEY</string>
 		<string>DROPBOXSECRET</string>
 	</array>
+	<key>SAVE_PREFS_NAME_TEXTVIEW</key>
+	<string>TEXTVIEW</string>
+	<key>SAVE_KEYS_TEXTVIEW</key>
+	<array>
+		<string>FONTSIZE</string>
+		<string>HIDEMARKER</string>
+	</array>
 </dict>
 </plist>

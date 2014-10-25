@@ -39,11 +39,31 @@
                     <navigationItem key="navigationItem" id="AO1-UW-Fer"/>
                     <connections>
                         <segue destination="H9I-Kr-mxV" kind="push" identifier="toSub" id="GDf-Ny-7C4"/>
+                        <segue destination="Cep-MO-qPE" kind="push" identifier="toText" id="Zze-es-QjA"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1VA-8t-ZXO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="558" y="32"/>
+            <point key="canvasLocation" x="440" y="32"/>
+        </scene>
+        <!--Text View Controller-->
+        <scene sceneID="1ue-S0-Fjy">
+            <objects>
+                <viewController storyboardIdentifier="TextController" id="Cep-MO-qPE" customClass="TextViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="P6X-2G-HCx"/>
+                        <viewControllerLayoutGuide type="bottom" id="T85-qH-GvN"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="5KQ-A8-S9u">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="rpe-GK-Q2I"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Stb-Uz-fAL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="440" y="731"/>
         </scene>
         <!--Sub Table View Controller-->
         <scene sceneID="9Od-gZ-Ula">
@@ -81,7 +101,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="roY-ps-tmH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1081" y="32"/>
+            <point key="canvasLocation" x="861" y="32"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Pxo-zh-ZAs">

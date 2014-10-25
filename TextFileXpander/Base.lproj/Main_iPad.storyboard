@@ -39,11 +39,31 @@
                     <navigationItem key="navigationItem" id="pjX-kS-30S"/>
                     <connections>
                         <segue destination="urT-f3-e03" kind="push" identifier="toSub" id="Vim-f8-hYx"/>
+                        <segue destination="eNE-3H-abI" kind="push" identifier="toText" id="w3F-7C-2oF"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="L2o-jf-QuW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1014" y="71"/>
+            <point key="canvasLocation" x="922" y="71"/>
+        </scene>
+        <!--Text View Controller-->
+        <scene sceneID="Apw-YW-8vq">
+            <objects>
+                <viewController storyboardIdentifier="TextController" id="eNE-3H-abI" customClass="TextViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="fI4-9L-peW"/>
+                        <viewControllerLayoutGuide type="bottom" id="U6e-D2-fGI"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="4p7-89-gdw">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Bmp-b7-Kae"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LmW-dS-QoA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="922" y="1249"/>
         </scene>
         <!--Sub Table View Controller-->
         <scene sceneID="mFd-Yo-KxN">
@@ -81,7 +101,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CGe-O6-xO3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1988" y="71"/>
+            <point key="canvasLocation" x="1812" y="71"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="br5-Wg-Ld8">

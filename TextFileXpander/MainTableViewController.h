@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "SubTableViewController.h"
+#import "TextViewController.h"
 #import "ActionViewController.h"
 #import "Dropbox.h"
 #import "DocumentsStorage.h"

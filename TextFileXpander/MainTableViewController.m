@@ -17,6 +17,7 @@ static NSString *const EXTRA_PARAM_MAIN = @"paramMain";
 
 static NSString *const VIEW_TYPE_STD = @"Standard View";
 static NSString *const VIEW_TYPE_EXP = @"Expandable View";
+static NSString *const VIEW_TYPE_TEXT = @"Memorizable View";
 static NSString *const STORAGE_NAMES[] = {@"Dropbox", @"Google Drive", @"Local"};
 static NSString *const STORAGE_CLASSES[] = {@"Dropbox", @"GoogleDrive", @"DocumentsStorage"};
 
@@ -72,12 +73,12 @@ static NSInteger const ACTIONSHEET_TAG_STORAGE = 4;
     actionMenuItems = @[
                         NSLocalizedString(@"action_load_data", nil),
                         NSLocalizedString(@"action_refresh", nil),
-//                        NSLocalizedString(@"action_view_type", nil),
+                        NSLocalizedString(@"action_view_type", nil),
                         NSLocalizedString(@"action_reset", nil),
                         ];
     viewTypeMenuItems = @[
                           VIEW_TYPE_STD,
-                          VIEW_TYPE_EXP,
+                          VIEW_TYPE_TEXT,
                           ];
     resetMenuItems = @[
                        NSLocalizedString(@"dialog_title_reset", nil),
@@ -569,7 +570,12 @@ static NSInteger const ACTIONSHEET_TAG_STORAGE = 4;
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    [self performSegueWithIdentifier:@"toSub" sender:self];
+    if ([currentViewType isEqualToString:VIEW_TYPE_TEXT]) {
+        [self performSegueWithIdentifier:@"toText" sender:self];
+    }
+    else {
+        [self performSegueWithIdentifier:@"toSub" sender:self];
+    }
 }
 
 #pragma mark - Navigation
@@ -577,7 +583,8 @@ static NSInteger const ACTIONSHEET_TAG_STORAGE = 4;
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    if ([segue.identifier isEqualToString:@"toSub"]) {
+    if ([segue.identifier isEqualToString:@"toSub"] ||
+        [segue.identifier isEqualToString:@"toText"]) {
         SubTableViewController *nvc = (SubTableViewController *)[segue destinationViewController];
         nvc.localFileName = groupArray[[self.tableView indexPathForSelectedRow].row];
         NSLog(@"%@prepareForSegue...%@", classNameForLog, nvc.localFileName);

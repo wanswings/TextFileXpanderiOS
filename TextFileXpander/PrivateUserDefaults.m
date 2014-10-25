@@ -28,6 +28,8 @@
         SAVE_KEYS_STORAGE = [dic objectForKey:@"SAVE_KEYS_STORAGE"];
         SAVE_KEYS_DROPBOX = [dic objectForKey:@"SAVE_KEYS_DROPBOX"];
         SAVE_KEYS_GOOGLE = [dic objectForKey:@"SAVE_KEYS_GOOGLE"];
+        SAVE_PREFS_NAME_TEXTVIEW = [dic objectForKey:@"SAVE_PREFS_NAME_TEXTVIEW"];
+        SAVE_KEYS_TEXTVIEW = [dic objectForKey:@"SAVE_KEYS_TEXTVIEW"];
     }
     return self;
 }
@@ -48,23 +50,33 @@
     for (id key in SAVE_KEYS_GOOGLE) {
         [prefs removeObjectForKey:key];
     }
+    for (id key in SAVE_KEYS_TEXTVIEW) {
+        [prefs removeObjectForKey:key];
+    }
+
+    [prefs synchronize];
 }
 
 - (NSArray *)getKeys:(NSArray *)keys
 {
     NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
     NSArray *result = [NSArray array];
+    BOOL existValue = NO;
 
     for (id key in keys) {
         NSString *value = [prefs stringForKey:key];
         if (value == nil) {
-            result = nil;
-            break;
+            result = [result arrayByAddingObject:@""];
         }
-        result = [result arrayByAddingObject:value];
+        else {
+            result = [result arrayByAddingObject:value];
+            existValue = YES;
+        }
     }
-
-    return result;
+    if (existValue)
+        return result;
+    else
+        return nil;
 }
 
 - (void)storeKeys:(NSArray *)keys values:(NSArray *)vals
@@ -76,6 +88,8 @@
             [prefs setObject:vals[idx] forKey:key];
         }
     }];
+
+    [prefs synchronize];
 }
 
 - (void)clearKeys
@@ -98,6 +112,13 @@
             [prefs removeObjectForKey:key];
         }
     }
+    else if ([prefsName isEqualToString:SAVE_PREFS_NAME_TEXTVIEW]) {
+        for (id key in SAVE_KEYS_TEXTVIEW) {
+            [prefs removeObjectForKey:key];
+        }
+    }
+
+    [prefs synchronize];
 }
 
 @end

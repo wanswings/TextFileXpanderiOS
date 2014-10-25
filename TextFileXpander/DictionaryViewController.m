@@ -75,7 +75,7 @@ static CGFloat const angle90[4] = {0.0f, 180.0f, 90.0f, 270.0f};
     // Dispose of any resources that can be recreated.
 }
 
--(void) dismissViewControllerAnimated:(BOOL)flag completion:(void (^)(void))completion
+- (void) dismissViewControllerAnimated:(BOOL)flag completion:(void (^)(void))completion
 {
     [super dismissViewControllerAnimated:flag completion:completion];
 

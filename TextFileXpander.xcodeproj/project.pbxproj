@@ -29,6 +29,7 @@
 		3B8B23B019B75EFF00B1FB5D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3B8B23AE19B75EFF00B1FB5D /* InfoPlist.strings */; };
 		3B8B23B219B75EFF00B1FB5D /* TextFileXpanderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8B23B119B75EFF00B1FB5D /* TextFileXpanderTests.m */; };
 		3B8B23BD19B7618000B1FB5D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3B8B23BF19B7618000B1FB5D /* Localizable.strings */; };
+		3B94E8B519F364F700A1395B /* TextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B94E8B419F364F700A1395B /* TextViewController.m */; };
 		3BB7F65919C5DCEC0082FAE5 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BB7F65819C5DCEC0082FAE5 /* Reachability.m */; };
 		3BD46B7A19CC0E170038E386 /* PickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BD46B7919CC0E170038E386 /* PickerViewController.m */; };
 		3BDEACB619CFAE2E00E51A26 /* sample.txt in Resources */ = {isa = PBXBuildFile; fileRef = 3BDEACB519CFAE2E00E51A26 /* sample.txt */; };
@@ -93,6 +94,8 @@
 		3B8B23B119B75EFF00B1FB5D /* TextFileXpanderTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TextFileXpanderTests.m; sourceTree = "<group>"; };
 		3B8B23BE19B7618000B1FB5D /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		3B8B23C019B761FB00B1FB5D /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		3B94E8B319F364F700A1395B /* TextViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextViewController.h; sourceTree = "<group>"; };
+		3B94E8B419F364F700A1395B /* TextViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextViewController.m; sourceTree = "<group>"; };
 		3BB7F65719C5DCEC0082FAE5 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		3BB7F65819C5DCEC0082FAE5 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		3BD46B7819CC0E170038E386 /* PickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PickerViewController.h; sourceTree = "<group>"; };
@@ -251,6 +254,8 @@
 				3BDF614C19B8321C00756F92 /* SubTableViewController.h */,
 				3BDF614D19B8321C00756F92 /* SubTableViewController.m */,
 				3B8B238A19B75EFF00B1FB5D /* Supporting Files */,
+				3B94E8B319F364F700A1395B /* TextViewController.h */,
+				3B94E8B419F364F700A1395B /* TextViewController.m */,
 			);
 			path = TextFileXpander;
 			sourceTree = "<group>";
@@ -439,6 +444,7 @@
 				3BE41F0819EA0F9C00D0FF91 /* GTMOAuth2Authentication.m in Sources */,
 				3BE41F1019EA122C00D0FF91 /* GoogleAuthViewController.m in Sources */,
 				3BF4C72619CC3BD0009D6872 /* ActionViewController.m in Sources */,
+				3B94E8B519F364F700A1395B /* TextViewController.m in Sources */,
 				3BE41F1519EA2BAD00D0FF91 /* GoogleDrive.m in Sources */,
 				3BE41F0A19EA0F9C00D0FF91 /* GTMOAuth2ViewControllerTouch.m in Sources */,
 				3BDF614B19B8312A00756F92 /* MainTableViewController.m in Sources */,

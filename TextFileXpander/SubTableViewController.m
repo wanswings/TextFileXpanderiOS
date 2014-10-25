@@ -11,7 +11,10 @@
 #import "DictionaryViewController.h"
 
 static NSInteger const ATTR_SEPARATOR = 1;
-static NSInteger const ATTR_DATA = 2;
+static NSInteger const ATTR_NORMAL = 2;
+static NSInteger const ATTR_MARKER_NORMAL = 3;
+static NSInteger const ATTR_MARKER_STRONG = 4;
+static NSInteger const ATTR_MARKER_WEAK = 5;
 
 @implementation SubTableViewController
 {
@@ -67,7 +70,6 @@ static NSInteger const ATTR_DATA = 2;
     // Dispose of any resources that can be recreated.
 }
 
-
 - (void)refreshLocalData:(NSString *)fname
 {
     NSLog(@"%@refreshLocalData", classNameForLog);
@@ -78,9 +80,14 @@ static NSInteger const ATTR_DATA = 2;
     NSError *error = nil;
     NSString *fdata = [NSString stringWithContentsOfFile:fullPath encoding:NSUTF8StringEncoding error:&error];
     if (!error) {
-        NSString *pattern = @"^(-{2}-+)\\s*(.*)";
-        NSRegularExpression *regexp = [NSRegularExpression
-                                       regularExpressionWithPattern:pattern
+        NSString *pattern1 = @"^(-{2}-+)\\s*(.*)";
+        NSRegularExpression *regexp1 = [NSRegularExpression
+                                        regularExpressionWithPattern:pattern1
+                                        options:NSRegularExpressionCaseInsensitive
+                                        error:&error];
+        NSString *pattern2 = @"^marker:(strong:|weak:)?\\s*(.+)";
+        NSRegularExpression *regexp2 = [NSRegularExpression
+                                       regularExpressionWithPattern:pattern2
                                        options:NSRegularExpressionCaseInsensitive
                                        error:&error];
 
@@ -90,16 +97,37 @@ static NSInteger const ATTR_DATA = 2;
         [fdata enumerateLinesUsingBlock:^(NSString *line, BOOL *stop) {
             if (line.length > 0) {
                 @autoreleasepool {
-                    NSTextCheckingResult *match =
-                            [regexp firstMatchInString:line options:0 range:NSMakeRange(0, line.length)];
-                    if (match) {
-                        NSString *matchStr = [line substringWithRange:[match rangeAtIndex:2]];
+                    NSTextCheckingResult *match1 =
+                            [regexp1 firstMatchInString:line options:0 range:NSMakeRange(0, line.length)];
+                    if (match1) {
+                        NSString *matchStr = [line substringWithRange:[match1 rangeAtIndex:2]];
                         [childArray addObject:matchStr];
                         [childAttrArray addObject:[NSNumber numberWithInt:ATTR_SEPARATOR]];
                     }
                     else {
+                        int attr = ATTR_NORMAL;
+                        NSTextCheckingResult *match2 =
+                                [regexp2 firstMatchInString:line options:0 range:NSMakeRange(0, line.length)];
+                        if (match2) {
+                            if ([match2 rangeAtIndex:1].length == 0) {
+                                attr = ATTR_MARKER_NORMAL;
+                            }
+                            else {
+                                NSString *matchCmd = [line substringWithRange:[match2 rangeAtIndex:1]];
+                                if ([matchCmd isEqual:@"strong:"]) {
+                                    attr = ATTR_MARKER_STRONG;
+                                }
+                                else if ([matchCmd isEqual:@"weak:"]) {
+                                    attr = ATTR_MARKER_WEAK;
+                                }
+                                else {
+                                    attr = ATTR_MARKER_NORMAL;
+                                }
+                            }
+                            line = [line substringWithRange:[match2 rangeAtIndex:2]];
+                        }
                         [childArray addObject:line];
-                        [childAttrArray addObject:[NSNumber numberWithInt:ATTR_DATA]];
+                        [childAttrArray addObject:[NSNumber numberWithInt:attr]];
                     }
                 }
             }
@@ -294,19 +322,26 @@ static NSInteger const ATTR_DATA = 2;
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell
                                                 forRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if ([[childAttrArray objectAtIndex:indexPath.row] intValue] == ATTR_SEPARATOR) {
+    int attr = [[childAttrArray objectAtIndex:indexPath.row] intValue];
+
+    if (attr == ATTR_SEPARATOR) {
         cell.backgroundColor = [UIColor lightGrayColor];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
     }
-    else {
-        cell.backgroundColor = [UIColor whiteColor];
-        cell.selectionStyle = UITableViewCellSelectionStyleDefault;
+    else if (attr == ATTR_MARKER_NORMAL) {
+        cell.textLabel.textColor = [UIColor blueColor];
+    }
+    else if (attr == ATTR_MARKER_STRONG) {
+        cell.textLabel.textColor = [UIColor redColor];
+    }
+    else if (attr == ATTR_MARKER_WEAK) {
+        cell.textLabel.textColor = [UIColor lightGrayColor];
     }
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if ([[childAttrArray objectAtIndex:indexPath.row] intValue] == ATTR_DATA) {
+    if ([[childAttrArray objectAtIndex:indexPath.row] intValue] != ATTR_SEPARATOR) {
         [self childItemClick:indexPath isLongTap:NO];
     }
 }
