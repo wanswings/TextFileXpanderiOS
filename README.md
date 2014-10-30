@@ -117,6 +117,14 @@ Uninstall
 
 Release Notes
 --------------------
+Version 2.1
+
+- Fix scroll issue for the Standard View.
+- Add "currency:" magic word.
+- Change the site for "flight:" magic word.
+- Modify "route:" magic word, add "from: here".
+- Change the site for "weather:" magic word.
+
 Version 2.0
 
 - Add Memorizable View.
